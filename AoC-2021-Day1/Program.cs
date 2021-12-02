@@ -22,14 +22,19 @@ class Program
 
     public static int CountIncreases(int[] depths)
     {
-        int count = 0;
-        for (int i = 1; i < depths.Length; i++)
-        {
-            if (depths[i - 1] < depths[i])
-            {
-                count++;
-            }
-        }
+        //int count = 0;
+        //for (int i = 1; i < depths.Length; i++)
+        //{
+        //    if (depths[i - 1] < depths[i])
+        //    {
+        //        count++;
+        //    }
+        //}
+
+        // skip gives me a second set that just doesnt include the first line.
+        // The zip combines both sets, giving me the nth line in both.Since set two is just offset by one, I get both elements that I need to compare. So I compare d1 and d2, then store the comparison boolean result.
+        // Then need to count all the true results.
+        int count = depths.Zip(depths.Skip(1), (d1, d2) => d1 < d2).Count(x => x);
 
         return count;
     }
