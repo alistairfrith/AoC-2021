@@ -13,35 +13,70 @@ class Program
     public static void DoIt(string inputFileName)
     {
         string[] lines = File.ReadAllLines(inputFileName);
-        int[] depths = Array.ConvertAll(lines, l => int.Parse(l));
 
         Console.WriteLine($"Processing input from {inputFileName}");
-        Part1(depths);
-        Part2(depths);
+        Console.WriteLine(Part1(lines));
+        Console.WriteLine(Part2(lines));
     }
 
-    public static void Part1(int[] depths)
+    public static int Part1(string[] lines)
     {
-        int count = 0;
-        for (int i = 1; i < depths.Length; i++)
+        var forwards = lines.Where(line => line.StartsWith("forward"));
+        var downs = lines.Where(line => line.StartsWith("down"));
+        var ups = lines.Where(line => line.StartsWith("up"));
+
+        int forward = 0;
+        foreach (var forwardCmd in forwards)
         {
-            if (depths[i - 1] < depths[i])
+            forward += int.Parse(forwardCmd.Split(' ').Last());
+        }
+
+        int down = 0;
+        foreach (var downCmd in downs)
+        {
+            down += int.Parse(downCmd.Split(' ').Last());
+        }
+
+        int up = 0;
+        foreach (var upCmd in ups)
+        {
+            up += int.Parse(upCmd.Split(' ').Last());
+        }
+
+        return forward * Math.Abs(up - down);
+    }
+
+    public static int Part2(string[] lines)
+    {
+        int aim = 0;
+        int depth = 0;
+        int position = 0;
+
+        foreach (string line in lines)
+        {
+            var cmds = line.Split(' ');
+            int value = int.Parse(cmds[1]);
+
+            switch (cmds[0])
             {
-                count++;
+                case "forward":
+                    position += value;
+                    depth += aim * value;
+                    break;
+
+                case "up":
+                    aim -= value;
+                    break;
+
+                case "down":
+                    aim += value;
+                    break;
+
+                default:
+                    throw new Exception($"invalid command ");
             }
         }
 
-        Console.WriteLine(count);
-    }
-
-    public static void Part2(int[] depths)
-    {
-        List<int> averages = new List<int>();
-        for (int i = 2; i < depths.Length; i++)
-        {
-            averages.Add(depths[i] + depths[i - 1] + depths[i - 2]);
-        }
-
-        Part1(averages.ToArray());
+        return position * depth;
     }
 }
