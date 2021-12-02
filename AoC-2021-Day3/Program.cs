@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Reflection;
 
 class Program
 {
@@ -8,6 +9,9 @@ class Program
     {
         DoIt("inputExample.txt");
         DoIt("input.txt");
+
+        Console.WriteLine("Hit any key to continue");
+        Console.ReadKey();
     }
 
     public static void DoIt(string inputFileName)
@@ -15,8 +19,11 @@ class Program
         string[] lines = File.ReadAllLines(inputFileName);
 
         Console.WriteLine($"Processing input from {inputFileName}");
-        Console.WriteLine(Part1(lines));
-        Console.WriteLine(Part2(lines));
+
+        string programName = Assembly.GetExecutingAssembly().FullName.Split(',')[0];
+        Console.WriteLine($"\t{programName} Part 1 : {Part1(lines)}");
+        Console.WriteLine($"\t{programName} Part 2 : {Part2(lines)}");
+        Console.WriteLine();
     }
 
     public static int Part1(string[] lines)
