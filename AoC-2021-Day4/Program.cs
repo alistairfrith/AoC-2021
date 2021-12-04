@@ -45,11 +45,14 @@ namespace AoC_2021_Day4
             {
                 foreach (BingoCard card in cards)
                 {
-                    card.Mark(call);
-                    if (card.CompleteLine())
+                    if (card.Score() == 0)
                     {
-                        Console.WriteLine(card.ToString());
-                        return card.Score(call);
+                        card.Mark(call);
+                        if (card.Score() > 0)
+                        {
+                            Console.WriteLine(card.Score());
+                            Console.WriteLine( card.ToString() );
+                        }
                     }
                 }
 

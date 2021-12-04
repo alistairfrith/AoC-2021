@@ -10,6 +10,7 @@ namespace AoC_2021_Day4
     {
         private string[,] numbers = new string[5, 5];
         private bool[,] matches = new bool[5, 5];
+        private int score = 0;
 
         public BingoCard(IEnumerable<string> lines)
         {
@@ -48,7 +49,7 @@ namespace AoC_2021_Day4
             return result;
         }
        
-        internal int Score(string winningCall)
+        private void CalculateScore(string winningCall)
         {
             int sumUnmarked = 0;
             for (int rowNum = 0; rowNum < 5; rowNum++)
@@ -62,11 +63,20 @@ namespace AoC_2021_Day4
                 }
             }
 
-            return sumUnmarked * int.Parse(winningCall);
+            score = sumUnmarked * int.Parse(winningCall);
+        }
+
+        internal int Score()
+        {
+            return score;
         }
 
         internal void Mark(string call)
         {
+            // don't mark if we've already won
+            if (score > 0)
+                return;
+
             for (int rowNum = 0; rowNum < 5; rowNum++)
             {
                 for (int colnum = 0; colnum < 5; colnum++)
@@ -74,6 +84,10 @@ namespace AoC_2021_Day4
                     if (numbers[rowNum, colnum] == call)
                     {
                         matches[rowNum, colnum] = true;
+                        if (CompleteLine())
+                        {
+                            CalculateScore(call);
+                        }
                         return;
                     }
                 }
