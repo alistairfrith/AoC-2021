@@ -33,7 +33,7 @@ namespace AoC_2021_Day5
 
         public static int Part1(string[] lines)
         {
-            var vents = MapVents(lines, true);
+            var vents = MapVents(lines, false);
             PrintMap(vents);
 
             return vents.Where(v => v.Value > 1).Count();
@@ -41,13 +41,13 @@ namespace AoC_2021_Day5
 
         public static int Part2(string[] lines)
         {
-            var vents = MapVents(lines, false);
+            var vents = MapVents(lines, true);
             PrintMap(vents);
 
             return vents.Where(v => v.Value > 1).Count();
         }
 
-        private static Dictionary<string, int> MapVents(string[] lines, bool onlyOrthogonal)
+        private static Dictionary<string, int> MapVents(string[] lines, bool includeDiagonal)
         {
             Dictionary<string, int> vents = new Dictionary<string, int>();
 
@@ -59,16 +59,16 @@ namespace AoC_2021_Day5
                 var start=ends[0].Split(',');
                 var end = ends[1].Split(',');
 
-                if (onlyOrthogonal)
+                if (includeDiagonal)
+                {
+                    vents = MapLine(vents, start, end);
+                }
+                else
                 {
                     if (LineIsOrthoganol(start, end))
                     {
                         vents = MapLine(vents, start, end);
                     }
-                }
-                else
-                {
-                    vents = MapLine(vents, start, end);
                 }
             }
 
