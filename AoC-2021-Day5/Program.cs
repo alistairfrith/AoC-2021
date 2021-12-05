@@ -151,6 +151,5 @@ namespace AoC_2021_Day5
                 Console.WriteLine();
             }
         }
-#
     }
 }
