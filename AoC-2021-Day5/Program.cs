@@ -84,19 +84,19 @@ namespace AoC_2021_Day5
                 {
                     if (LineIsOrthoganol(start, end))
                     {
-                        vents = MapOrthogonalLine(vents, start, end);
+                        vents = MapLine(vents, start, end);
                     }
                 }
                 else
                 {
-                    vents = MapAnyLine(vents, start, end);
+                    vents = MapLine(vents, start, end);
                 }
             }
 
             return vents;
         }
 
-        private static Dictionary<string, int> MapAnyLine(Dictionary<string, int> vents, string[] start, string[] end)
+        private static Dictionary<string, int> MapLine(Dictionary<string, int> vents, string[] start, string[] end)
         {
             int[] startCoords = CoordFromStrings(start);
             int[] endCoords = CoordFromStrings(end);
@@ -130,34 +130,6 @@ namespace AoC_2021_Day5
         private static bool LineIsOrthoganol(string[] start, string[] end)
         {
             return (start[0] == end[0] || start[1] == end[1]);  
-        }
-
-        private static Dictionary<string, int> MapOrthogonalLine(Dictionary<string, int> vents, string[] start, string[] end)
-        {
-            int[] startCoords = CoordFromStrings(start);
-            int[] endCoords = CoordFromStrings(end);
-
-
-            if (startCoords[0] == endCoords[0])
-            {
-                int xCoord = startCoords[0];
-
-                for (int yCoord = Math.Min(startCoords[1], endCoords[1]) ; yCoord <= Math.Max(startCoords[1], endCoords[1]); yCoord++)
-                {
-                    vents = AddVent(vents, xCoord, yCoord);
-                }
-
-            }
-            else
-            {
-                int yCoord = startCoords[1];
-
-                for (int xCoord = Math.Min(startCoords[0], endCoords[0]); xCoord <= Math.Max(startCoords[0], endCoords[0]); xCoord++)
-                {
-                    vents = AddVent(vents, xCoord, yCoord);
-                }
-            }
-            return vents;
         }
 
         private static Dictionary<string, int> AddVent(Dictionary<string, int> vents, int xCoord, int yCoord)
