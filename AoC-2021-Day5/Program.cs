@@ -47,27 +47,6 @@ namespace AoC_2021_Day5
             return vents.Where(v => v.Value > 1).Count();
         }
 
-        private static void PrintMap(Dictionary<string, int> vents)
-        {
-            for (int yCoord = 0; yCoord < 10; yCoord++)
-            {
-                for (int xCoord = 0; xCoord < 10; xCoord++)
-                {
-                    string location = $"{xCoord},{yCoord}";
-
-                    if (vents.Keys.Contains(location))
-                    {
-                        Console.Write($" {vents[location]}");
-                    }
-                    else
-                    {
-                        Console.Write(" .");
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
-
         private static Dictionary<string, int> MapVents(string[] lines, bool onlyOrthogonal)
         {
             Dictionary<string, int> vents = new Dictionary<string, int>();
@@ -152,5 +131,26 @@ namespace AoC_2021_Day5
             return result;
         }
 
+        private static void PrintMap(Dictionary<string, int> vents)
+        {
+            for (int yCoord = 0; yCoord < 10; yCoord++)
+            {
+                for (int xCoord = 0; xCoord < 10; xCoord++)
+                {
+                    string location = $"{xCoord},{yCoord}";
+
+                    if (vents.Keys.Contains(location))
+                    {
+                        Console.Write($" {vents[location]}");
+                    }
+                    else
+                    {
+                        Console.Write(" .");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+#
     }
 }
