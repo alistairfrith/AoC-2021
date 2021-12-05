@@ -33,11 +33,152 @@ namespace AoC_2021_Day5
 
         public static int Part1(string[] lines)
         {
-            return 0;
+            var vents = MapVents(lines, true);
+            PrintMap(vents);
+
+            return vents.Where(v => v.Value > 1).Count();
         }
+
         public static int Part2(string[] lines)
         {
-            return 0;
+            var vents = MapVents(lines, false);
+            PrintMap(vents);
+
+            return vents.Where(v => v.Value > 1).Count();
         }
+
+        private static void PrintMap(Dictionary<string, int> vents)
+        {
+            for (int yCoord = 0; yCoord < 10; yCoord++)
+            {
+                for (int xCoord = 0; xCoord < 10; xCoord++)
+                {
+                    string location = $"{xCoord},{yCoord}";
+
+                    if (vents.Keys.Contains(location))
+                    {
+                        Console.Write($" {vents[location]}");
+                    }
+                    else
+                    {
+                        Console.Write(" .");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private static Dictionary<string, int> MapVents(string[] lines, bool onlyOrthogonal)
+        {
+            Dictionary<string, int> vents = new Dictionary<string, int>();
+
+            foreach (string line in lines)
+            {
+                string[] separators = { " -> " };
+                var ends = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+                var start=ends[0].Split(',');
+                var end = ends[1].Split(',');
+
+                if (onlyOrthogonal)
+                {
+                    if (LineIsOrthoganol(start, end))
+                    {
+                        vents = MapOrthogonalLine(vents, start, end);
+                    }
+                }
+                else
+                {
+                    vents = MapAnyLine(vents, start, end);
+                }
+            }
+
+            return vents;
+        }
+
+        private static Dictionary<string, int> MapAnyLine(Dictionary<string, int> vents, string[] start, string[] end)
+        {
+            int[] startCoords = CoordFromStrings(start);
+            int[] endCoords = CoordFromStrings(end);
+
+            int xIncrement = calcIncrement(startCoords[0], endCoords[0]);
+            int yIncrement = calcIncrement(startCoords[1], endCoords[1]);
+
+            int xCoord = startCoords[0];
+            int yCoord = startCoords[1];
+            vents = AddVent(vents, xCoord, yCoord);
+
+            do
+            {
+                xCoord += xIncrement;
+                yCoord += yIncrement;
+                vents = AddVent(vents, xCoord, yCoord);
+            } while (xCoord != endCoords[0] || yCoord != endCoords[1]);
+
+            return vents;
+        }
+
+        private static int calcIncrement(int start, int end)
+        {
+            if (start == end) return 0;
+            if (start > end) return -1;
+            if (start < end) return 1;
+
+            throw new Exception("cannot calculate coordinate increment");
+        }
+
+        private static bool LineIsOrthoganol(string[] start, string[] end)
+        {
+            return (start[0] == end[0] || start[1] == end[1]);  
+        }
+
+        private static Dictionary<string, int> MapOrthogonalLine(Dictionary<string, int> vents, string[] start, string[] end)
+        {
+            int[] startCoords = CoordFromStrings(start);
+            int[] endCoords = CoordFromStrings(end);
+
+
+            if (startCoords[0] == endCoords[0])
+            {
+                int xCoord = startCoords[0];
+
+                for (int yCoord = Math.Min(startCoords[1], endCoords[1]) ; yCoord <= Math.Max(startCoords[1], endCoords[1]); yCoord++)
+                {
+                    vents = AddVent(vents, xCoord, yCoord);
+                }
+
+            }
+            else
+            {
+                int yCoord = startCoords[1];
+
+                for (int xCoord = Math.Min(startCoords[0], endCoords[0]); xCoord <= Math.Max(startCoords[0], endCoords[0]); xCoord++)
+                {
+                    vents = AddVent(vents, xCoord, yCoord);
+                }
+            }
+            return vents;
+        }
+
+        private static Dictionary<string, int> AddVent(Dictionary<string, int> vents, int xCoord, int yCoord)
+        {
+            string location = $"{xCoord},{yCoord}";
+            if (vents.Keys.Contains(location))
+            {
+                vents[location] += 1;
+            }
+            else
+            {
+                vents.Add(location, 1);
+            }
+            return vents;
+        }
+
+        private static int[] CoordFromStrings(string[] coordString)
+        {
+            int[] result = { int.Parse(coordString[0]), int.Parse(coordString[1]) };
+            return result;
+        }
+
     }
 }
