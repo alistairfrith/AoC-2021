@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day4-Giant-Squid",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day5-Hydrothermal-Venture", "AoC-2021-Day5\AoC-2021-Day5-Hydrothermal-Venture.csproj", "{5ADC7F55-B6C7-4011-966A-A863CAEB8D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day6", "AoC-2021-Day6\AoC-2021-Day6.csproj", "{542EAADE-D081-4BDF-8232-16BB34EAF864}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day6-LanternFish", "AoC-2021-Day6\AoC-2021-Day6-LanternFish.csproj", "{542EAADE-D081-4BDF-8232-16BB34EAF864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day7-TheTreacheryOfWhales", "A0C-2021-Day7\AoC-2021-Day7-TheTreacheryOfWhales.csproj", "{F609946D-ABEB-4998-B5BF-4697735134ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{542EAADE-D081-4BDF-8232-16BB34EAF864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{542EAADE-D081-4BDF-8232-16BB34EAF864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{542EAADE-D081-4BDF-8232-16BB34EAF864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F609946D-ABEB-4998-B5BF-4697735134ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F609946D-ABEB-4998-B5BF-4697735134ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F609946D-ABEB-4998-B5BF-4697735134ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F609946D-ABEB-4998-B5BF-4697735134ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
