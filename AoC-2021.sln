@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day1-Sonar-Sweep", "AoC-2021-Day1\AoC-2021-Day1-Sonar-Sweep.csproj", "{7E2D187D-717B-4F64-BB34-44C8B54B25FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day01-Sonar-Sweep", "AoC-2021-Day1\AoC-2021-Day01-Sonar-Sweep.csproj", "{7E2D187D-717B-4F64-BB34-44C8B54B25FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day2-Dive", "AoC-2021-Day2\AoC-2021-Day2-Dive.csproj", "{971C0F95-7455-494F-9DA5-93E2695580F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day02-Dive", "AoC-2021-Day2\AoC-2021-Day02-Dive.csproj", "{971C0F95-7455-494F-9DA5-93E2695580F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day3-Binary-Diagnostic", "AoC-2021-Day3\AoC-2021-Day3-Binary-Diagnostic.csproj", "{4A035D7A-EBA1-4156-BA15-0A3FBD31395F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day03-Binary-Diagnostic", "AoC-2021-Day3\AoC-2021-Day03-Binary-Diagnostic.csproj", "{4A035D7A-EBA1-4156-BA15-0A3FBD31395F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day4-Giant-Squid", "AoC-2021-Day4\AoC-2021-Day4-Giant-Squid.csproj", "{B1EF3EE4-82C2-465D-BC7B-25C9B5C63BB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day04-Giant-Squid", "AoC-2021-Day4\AoC-2021-Day04-Giant-Squid.csproj", "{B1EF3EE4-82C2-465D-BC7B-25C9B5C63BB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day5-Hydrothermal-Venture", "AoC-2021-Day5\AoC-2021-Day5-Hydrothermal-Venture.csproj", "{5ADC7F55-B6C7-4011-966A-A863CAEB8D3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day05-Hydrothermal-Venture", "AoC-2021-Day5\AoC-2021-Day05-Hydrothermal-Venture.csproj", "{5ADC7F55-B6C7-4011-966A-A863CAEB8D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day6-LanternFish", "AoC-2021-Day6\AoC-2021-Day6-LanternFish.csproj", "{542EAADE-D081-4BDF-8232-16BB34EAF864}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day06-LanternFish", "AoC-2021-Day6\AoC-2021-Day06-LanternFish.csproj", "{542EAADE-D081-4BDF-8232-16BB34EAF864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day7-TheTreacheryOfWhales", "A0C-2021-Day7\AoC-2021-Day7-TheTreacheryOfWhales.csproj", "{F609946D-ABEB-4998-B5BF-4697735134ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day07-TheTreacheryOfWhales", "A0C-2021-Day7\AoC-2021-Day07-TheTreacheryOfWhales.csproj", "{F609946D-ABEB-4998-B5BF-4697735134ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day8-SevenSegmentSearch", "AoC-2021-Day8-SevenSegmentSearch\AoC-2021-Day8-SevenSegmentSearch.csproj", "{49D90D49-8E80-4CE8-8A4D-42C650F5BD39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day08-SevenSegmentSearch", "AoC-2021-Day8-SevenSegmentSearch\AoC-2021-Day08-SevenSegmentSearch.csproj", "{49D90D49-8E80-4CE8-8A4D-42C650F5BD39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day9-SmokeBasin", "AoC-2021-Day9-\AoC-2021-Day9-SmokeBasin.csproj", "{23A811E2-CEBE-40E1-8A2B-6C66B9AA9C0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day09-SmokeBasin", "AoC-2021-Day9-\AoC-2021-Day09-SmokeBasin.csproj", "{23A811E2-CEBE-40E1-8A2B-6C66B9AA9C0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day10-SyntaxScoring", "AoC-2021-Day10-SyntaxScoring\AoC-2021-Day10-SyntaxScoring.csproj", "{A0F2A9F2-8A56-4105-BBA7-6C3D7488B2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day13-TransparentOrigami", "AoC-2021-Day13-TransparentOrigami\AoC-2021-Day13-TransparentOrigami.csproj", "{A6A0637D-56FF-41C9-9440-5171F435312E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{A0F2A9F2-8A56-4105-BBA7-6C3D7488B2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0F2A9F2-8A56-4105-BBA7-6C3D7488B2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0F2A9F2-8A56-4105-BBA7-6C3D7488B2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A0637D-56FF-41C9-9440-5171F435312E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A0637D-56FF-41C9-9440-5171F435312E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A0637D-56FF-41C9-9440-5171F435312E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A0637D-56FF-41C9-9440-5171F435312E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
