@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day10-SyntaxScorin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day13-TransparentOrigami", "AoC-2021-Day13-TransparentOrigami\AoC-2021-Day13-TransparentOrigami.csproj", "{A6A0637D-56FF-41C9-9440-5171F435312E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC-2021-Day14-ExtendedPolymerization", "AoC-2021-Day14-ExtendedPolymerization\AoC-2021-Day14-ExtendedPolymerization.csproj", "{1F8D6645-1312-488C-9055-072F128D8ABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{A6A0637D-56FF-41C9-9440-5171F435312E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6A0637D-56FF-41C9-9440-5171F435312E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6A0637D-56FF-41C9-9440-5171F435312E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8D6645-1312-488C-9055-072F128D8ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8D6645-1312-488C-9055-072F128D8ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8D6645-1312-488C-9055-072F128D8ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8D6645-1312-488C-9055-072F128D8ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
